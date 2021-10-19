@@ -6,6 +6,7 @@ import { registerValidator } from "./validators/registerValidator.js";
 import bcrypt from 'bcrypt';
 import { connect, disconnect } from './db/db.js';
 import { User } from './db/models/User.js';
+
 const app = express();
 app.use(cors());
 
@@ -73,13 +74,13 @@ app.get("/login", async (req, res) => {
 
   const registeredUser = await User.findOne({ email: email });
   if (!registeredUser) {
-    res.status(401).send('Something with your login went wrong. [email address not found].');
+    res.status(401).send('[email address not found].');
     return;
   }
 
   const isPasswordCorrect = await bcrypt.compare(password, registeredUser.hash);
   if (!isPasswordCorrect) {
-    res.status(401).send('Something with your login went wrong. [password incorrect].');
+    res.status(401).send('[password incorrect].');
     return;
   }
 
