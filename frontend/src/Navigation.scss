@@ -1,0 +1,9 @@
+.Navigation {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+
+  .NavItem:hover {
+    background-color: greenyellow;
+  }
+}

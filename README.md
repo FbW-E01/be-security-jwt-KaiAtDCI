@@ -3,7 +3,7 @@
 Your task is to improve on our example app
 
 1. Improve the /token endpoint to a /login endpoint
-  - get a username and password from the request
+  - get a username and hash from the request
   - compare to an existing array of user objects (array in app memory, no need for database)
   - return token only if user details are correct
 2. Add registration
